@@ -1,5 +1,5 @@
-"use client" // useRouter only work in client componenet
-import { useRouter } from "next/router";
+"use client" // useRouter only works in client component
+import { useRouter } from "next/navigation";
 export default function Order() {
 
     const router = useRouter();

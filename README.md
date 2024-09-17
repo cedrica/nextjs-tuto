@@ -190,3 +190,32 @@ content is the same as layout
 # loading ui
 - is use like a spinner to show a loading spinner during datafietch / content load. 
 - And while loading you can paralelly work on another poart aof the app
+
+# Error Handling
+- create a file error.tsx
+- export default function ErrorPage(error: Error, reset: () => void) {
+    return <div> {error.message} <button onClick={reset}>Try again</button></div>;
+}
+- this file automaticaly wrap a component in a try catch block and catch the error of all its children
+- reset is a function to retry the operation that cause the error
+
+# Handling error in layout
+- move the error.tsx in the same folder as the layout
+- the error will be catch by the layout and not by the component this time
+- all the children of the layout will be catch by the error.tsx
+
+# parallel routes (take a look at complex-dashboard)
+- there build using slot i.e. @revenues
+- each slot of an app caa function as a mini-app complete with its own navigation and state management
+- used for application where each section serve distinct purpose
+- add default.tsx to each slot to avoid 404 error because by reloading the page unmatched slot are not found
+
+# intercepting routes
+- used to intercept a route and redirect to another route
+- used to intercept a route and load data before the route is loaded
+- that mean you navigate to a route but landing on an inbetween state and only after reloading the page you come to the desired state
+- in the inbetween state the url is already the one of the final state but the data is not loaded yet
+- create interceptor folder use (.)before the folder name
+- use (..) to intercept a route one level above it is like cd ..
+- (...) to match segment from the route
+# Data Fetching

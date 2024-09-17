@@ -1,9 +1,9 @@
-import "./globals.css";
+"use client"
 import { usePathname } from "next/navigation";
+import "./globals.css";
 import Link from "next/link";
-
 const navLinks = [
-  {name:"Register", href: "/register"},
+  { name: "Register", href: "/register" },
   {name:"Login", href: "/login"},
   {name:"Password", href: "/password"},
 ];
